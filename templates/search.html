@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search (Vulnerable)</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>🔍 Search Products</h2>
+    <form method="GET">
+      <input type="text" name="q" placeholder="Search products..." value="{{ query }}">
+      <button type="submit">Search</button>
+    </form>
+    {% if results %}
+      <h3>Results:</h3>
+      <ul>
+        {% for r in results %}
+          <li><strong>{{ r[0] }}</strong>: {{ r[1] }}</li>
+        {% endfor %}
+      </ul>
+    {% elif query %}
+      <p>No results found.</p>
+    {% endif %}
+    <p><strong>Try SQLi:</strong> anything' UNION SELECT sql, '' FROM sqlite_master WHERE type='table'--</p>
+  </div>
+</body>
+</html>

